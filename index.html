@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Vida Espaço Estética - Clínica de estética e bem-estar em São Paulo">
     <title>Vida Espaço Estética | Beleza & Bem-estar</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>" type="image/svg+xml">
+<link rel="shortcut icon" href="#" />
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css">
+    
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,12 +31,11 @@
                 <div class="logo">
                     <h1><span class="logo-text">Vida Espaço</span> Estética</h1>
                 </div>
-<nav class="nav-menu">
+                <nav class="nav-menu">
     <a href="#inicio" class="nav-link active">Início</a>
     <a href="#sobre" class="nav-link">Sobre Nós</a>
     <a href="#servicos" class="nav-link">Serviços</a>
     <a href="#avaliacoes" class="nav-link">Avaliações</a>
-    <a href="#contato" class="nav-link">Contato</a>
     <a href="#agendamento" class="nav-link btn-cta">Agendar Horário</a>
 </nav>
                 <div class="hamburger">
@@ -60,7 +66,7 @@
         </div>
     </section>
 
-    <!-- Sobre Nós Section (Primeira seção após hero) -->
+    <!-- Sobre Nós Section -->
     <section id="sobre" class="sobre-destaque">
         <div class="container">
             <div class="section-header">
@@ -108,15 +114,15 @@
                     
                     <div class="sobre-stats">
                         <div class="stat">
-                            <h6>+<span class="counter" data-target="500">50000</span></h6>
+                            <h6>+<span class="counter" data-target="500">0</span></h6>
                             <p>Clientes Satisfeitas</p>
                         </div>
                         <div class="stat">
-                            <h6>+<span class="counter" data-target="10">20</span></h6>
+                            <h6>+<span class="counter" data-target="10">0</span></h6>
                             <p>Anos de Experiência</p>
                         </div>
                         <div class="stat">
-                            <h6><span class="counter" data-target="98">100</span>%</h6>
+                            <h6><span class="counter" data-target="98">0</span>%</h6>
                             <p>Taxa de Satisfação</p>
                         </div>
                     </div>
@@ -124,11 +130,11 @@
                 
                 <div class="sobre-image">
                     <div class="image-frame">
-                        <img src="img/equipe.jpg" alt="Nossa Clínica - Ambiente aconchegante e profissional" 
+                        <img loading="lazy" src="img/equipe.jpg" alt="Nossa Clínica - Ambiente aconchegante e profissional" 
                              onerror="this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                         <div class="image-badge">
                             <i class="fas fa-award"></i>
-                            
+                            <span>Desde 2014</span>
                         </div>
                     </div>
                 </div>
@@ -155,24 +161,32 @@
     </section>
 
     <!-- Serviços Section -->
-    <section id="servicos" class="servicos">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-subtitle">Nossos Serviços</h2>
-                <h3 class="section-title">Tratamentos Especializados</h3>
-                <p class="section-description">Oferecemos uma variedade de serviços para cuidar da sua beleza e bem-estar</p>
-                <div class="section-divider"></div>
+<section id="servicos" class="servicos">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-subtitle">Nossos Serviços</h2>
+            <h3 class="section-title">Tratamentos Especializados</h3>
+            <p class="section-description">Oferecemos uma variedade de serviços para cuidar da sua beleza e bem-estar</p>
+            
+            <!-- ADICIONE ESTE AVISO -->
+            <div style="margin: 15px 0 10px; padding: 10px; background: var(--primary-light); border-radius: 8px; font-size: 0.9rem;">
+                <i class="fas fa-mouse-pointer"></i> 
+                <strong>Dica:</strong> Clique em qualquer imagem para ir direto ao agendamento
             </div>
+            
+            <div class="section-divider"></div>
+        </div>
+        <!-- ... resto do código ... -->
             
             <div class="servicos-grid">
                 <!-- Limpeza de Pele -->
                 <div class="servico-card">
                     <div class="servico-image">
-                        <img src="img/limpezapele.jpg" alt="Limpeza de Pele Profissional"
+                        <img loading="lazy" src="img/limpezapele.jpg" alt="Limpeza de Pele Profissional"
                              onerror="this.src='https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                         <div class="servico-overlay">
                             <a href="#agendamento" class="btn-service">
-                                <i class="fas fa-calendar-alt"></i> Agendar
+                                <i class="fas fa-calendar-alt"></i> Agendar Agora
                             </a>
                         </div>
                     </div>
@@ -193,11 +207,11 @@
                 <!-- Massagem Relaxante -->
                 <div class="servico-card">
                     <div class="servico-image">
-                        <img src="img/massagem.jpg" alt="Massagem Relaxante"
+                        <img loading="lazy" src="img/massagem.jpg" alt="Massagem Relaxante"
                              onerror="this.src='https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                         <div class="servico-overlay">
                             <a href="#agendamento" class="btn-service">
-                                <i class="fas fa-calendar-alt"></i> Agendar
+                                <i class="fas fa-calendar-alt"></i> Agendar Agora
                             </a>
                         </div>
                     </div>
@@ -218,11 +232,11 @@
                 <!-- Drenagem Linfática -->
                 <div class="servico-card">
                     <div class="servico-image">
-                        <img src="img/drenagem.jpg" alt="Drenagem Linfática"
+                        <img loading="lazy" src="img/drenagem.jpg" alt="Drenagem Linfática"
                              onerror="this.src='https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                         <div class="servico-overlay">
                             <a href="#agendamento" class="btn-service">
-                                <i class="fas fa-calendar-alt"></i> Agendar
+                                <i class="fas fa-calendar-alt"></i> Agendar Agora
                             </a>
                         </div>
                     </div>
@@ -243,11 +257,11 @@
                 <!-- Endermoterapia -->
                 <div class="servico-card">
                     <div class="servico-image">
-                        <img src="img/diamante.jpg" alt="Endermoterapia Facial"
+                        <img loading="lazy" src="img/diamante.jpg" alt="Endermoterapia Facial"
                              onerror="this.src='https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                         <div class="servico-overlay">
                             <a href="#agendamento" class="btn-service">
-                                <i class="fas fa-calendar-alt"></i> Agendar
+                                <i class="fas fa-calendar-alt"></i> Agendar Agora
                             </a>
                         </div>
                     </div>
@@ -268,11 +282,11 @@
                 <!-- Peeling de Diamante -->
                 <div class="servico-card">
                     <div class="servico-image">
-                        <img src="img/sla.jpg" alt="Peeling de Diamante"
+                        <img loading="lazy" src="img/sla.jpg" alt="Peeling de Diamante"
                              onerror="this.src='https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                         <div class="servico-overlay">
                             <a href="#agendamento" class="btn-service">
-                                <i class="fas fa-calendar-alt"></i> Agendar
+                                <i class="fas fa-calendar-alt"></i> Agendar Agora
                             </a>
                         </div>
                     </div>
@@ -293,11 +307,11 @@
                 <!-- Depilação a Laser -->
                 <div class="servico-card">
                     <div class="servico-image">
-                        <img src="img/laser.jpg" alt="Depilação a Laser"
+                        <img loading="lazy" src="img/laser.jpg" alt="Depilação a Laser"
                              onerror="this.src='https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                         <div class="servico-overlay">
                             <a href="#agendamento" class="btn-service">
-                                <i class="fas fa-calendar-alt"></i> Agendar
+                                <i class="fas fa-calendar-alt"></i> Agendar Agora
                             </a>
                         </div>
                     </div>
@@ -318,11 +332,11 @@
                 <!-- Remoção de Verrugas -->
                 <div class="servico-card">
                     <div class="servico-image">
-                        <img src="img/verruga.jpg" alt="Remoção de Verrugas"
+                        <img loading="lazy" src="img/verruga.jpg" alt="Remoção de Verrugas"
                              onerror="this.src='https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                         <div class="servico-overlay">
                             <a href="#agendamento" class="btn-service">
-                                <i class="fas fa-calendar-alt"></i> Agendar
+                                <i class="fas fa-calendar-alt"></i> Agendar Agora
                             </a>
                         </div>
                     </div>
@@ -343,11 +357,11 @@
                 <!-- Spa dos Pés -->
                 <div class="servico-card">
                     <div class="servico-image">
-                        <img src="img/spape.jpg" alt="Spa dos Pés"
+                        <img loading="lazy" src="img/spape.jpg" alt="Spa dos Pés"
                              onerror="this.src='https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                         <div class="servico-overlay">
                             <a href="#agendamento" class="btn-service">
-                                <i class="fas fa-calendar-alt"></i> Agendar
+                                <i class="fas fa-calendar-alt"></i> Agendar Agora
                             </a>
                         </div>
                     </div>
@@ -368,11 +382,11 @@
                 <!-- Protocolo de Emagrecimento -->
                 <div class="servico-card">
                     <div class="servico-image">
-                        <img src="img/emagrecimento.jpg" alt="Protocolo de Emagrecimento"
+                        <img loading="lazy" src="img/emagrecimento.jpg" alt="Protocolo de Emagrecimento"
                              onerror="this.src='https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                         <div class="servico-overlay">
                             <a href="#agendamento" class="btn-service">
-                                <i class="fas fa-calendar-alt"></i> Agendar
+                                <i class="fas fa-calendar-alt"></i> Agendar Agora
                             </a>
                         </div>
                     </div>
@@ -419,225 +433,169 @@
                     </div>
                 </div>
                 <div class="horario-imagem">
-                    <img src="img/frenteespaco.jpg" alt="Nosso Espaço de Atendimento"
+                    <img loading="lazy" src="img/frenteespaco.jpg" alt="Nosso Espaço de Atendimento"
                          onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Feedback Section -->
-<!-- Avaliações Section -->
-<!-- Avaliações Section -->
-<section id="avaliacoes" class="avaliacoes-section">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-subtitle">Avaliações</h2>
-            <h3 class="section-title">Resultados Reais</h3>
-            <p class="section-description">Veja os depoimentos de nossas clientes satisfeitas</p>
-            <div class="section-divider"></div>
-        </div>
-        
-        <!-- Carrossel de Avaliações - Apenas Imagens -->
-        <div class="avaliacoes-carrossel">
-            <div class="carrossel-container">
-                <!-- Imagem 1 -->
-                <div class="carrossel-slide active">
-                    <img src="img/avaliacao1.jpg" alt="Depoimento de cliente sobre hidratação">
-                </div>
-                
-                <!-- Imagem 2 -->
-                <div class="carrossel-slide">
-                    <img src="img/avaliacao2.jpg" alt="Resultados de redução de medidas">
-                </div>
-                
-                <!-- Imagem 3 -->
-                <div class="carrossel-slide">
-                    <img src="img/avaliacao3.jpg" alt="Depoimento sobre tratamento capilar">
-                </div>
-                
-                <!-- Imagem 4 -->
-                <div class="carrossel-slide">
-                    <img src="img/avaliacao4.jpg" alt="Resultado de crioterapia - perda de peso">
-                </div>
-                
-                <!-- Imagem 5 -->
-                <div class="carrossel-slide">
-                    <img src="img/avaliacao5.jpg" alt="Depoimento sobre bem-estar pós-tratamento">
-                </div>
-                
-                <!-- Imagem 6 -->
-                <div class="carrossel-slide">
-                    <img src="img/avaliacao6.jpg" alt="Feedback sobre atendimento e ambiente">
-                </div>
-            </div>
-            
-            <!-- Controles do Carrossel -->
-            <button class="carrossel-prev" aria-label="Avaliação anterior">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="carrossel-next" aria-label="Próxima avaliação">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-            
-            <div class="carrossel-dots">
-                <span class="dot active" data-slide="0"></span>
-                <span class="dot" data-slide="1"></span>
-                <span class="dot" data-slide="2"></span>
-                <span class="dot" data-slide="3"></span>
-                <span class="dot" data-slide="4"></span>
-                <span class="dot" data-slide="5"></span>
-            </div>
-        </div>
-        
-        <div class="instagram-cta">
-            <i class="fab fa-instagram"></i>
-            <p>Siga nosso <a href="https://www.instagram.com/vida_espaco_estetica" target="_blank">Instagram</a> para mais resultados e atualizações!</p>
-        </div>
-    </div>
-</section>
-
-    <!-- Agendamento Section -->
-    <section id="agendamento" class="agendamento">
+    <!-- Avaliações Section -->
+    <section id="avaliacoes" class="avaliacoes-section">
         <div class="container">
-            <div class="agendamento-content">
-                <div class="agendamento-text">
-                    <h2 class="agendamento-title">Agende sua Consulta</h2>
-                    <p class="agendamento-description">Preencha o formulário e entraremos em contato para confirmar seu horário.</p>
-                    
-                    <div class="agendamento-beneficios">
-                        <div class="beneficio">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Atendimento Personalizado</span>
-                        </div>
-                        <div class="beneficio">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Profissionais Qualificados</span>
-                        </div>
-                        <div class="beneficio">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Ambiente Confortável</span>
-                        </div>
+            <div class="section-header">
+                <h2 class="section-subtitle">Avaliações</h2>
+                <h3 class="section-title">Resultados Reais</h3>
+                <p class="section-description">Veja os depoimentos de nossas clientes satisfeitas</p>
+                <div class="section-divider"></div>
+            </div>
+            
+            <!-- Carrossel de Avaliações - Apenas Imagens -->
+            <div class="avaliacoes-carrossel">
+                <div class="carrossel-container">
+                    <!-- Imagem 1 -->
+                    <div class="carrossel-slide active">
+                        <img loading="lazy" src="img/avaliacao1.jpg" alt="Depoimento de cliente sobre hidratação">
                     </div>
                     
-                    <div class="instagram-link">
-                        <a href="https://www.instagram.com/vida_espaco_estetica" target="_blank" class="instagram-btn">
-                            <i class="fab fa-instagram"></i> Siga-nos no Instagram
-                        </a>
-                        <p>Para mais dicas e novidades!</p>
+                    <!-- Imagem 2 -->
+                    <div class="carrossel-slide">
+                        <img loading="lazy" src="img/avaliacao2.jpg" alt="Resultados de redução de medidas">
+                    </div>
+                    
+                    <!-- Imagem 3 -->
+                    <div class="carrossel-slide">
+                        <img loading="lazy" src="img/avaliacao3.jpg" alt="Depoimento sobre tratamento capilar">
+                    </div>
+                    
+                    <!-- Imagem 4 -->
+                    <div class="carrossel-slide">
+                        <img loading="lazy" src="img/avaliacao4.jpg" alt="Resultado de crioterapia - perda de peso">
+                    </div>
+                    
+                    <!-- Imagem 5 -->
+                    <div class="carrossel-slide">
+                        <img loading="lazy" src="img/avaliacao5.jpg" alt="Depoimento sobre bem-estar pós-tratamento">
+                    </div>
+                    
+                    <!-- Imagem 6 -->
+                    <div class="carrossel-slide">
+                        <img loading="lazy" src="img/avaliacao6.jpg" alt="Feedback sobre atendimento e ambiente">
                     </div>
                 </div>
                 
-                <div class="agendamento-form">
-                    <form id="contactForm" class="form-agendamento">
-                        <h3>Solicitar Agendamento</h3>
-                        
-                        <div class="form-group">
-                            <label for="name">
-                                <i class="fas fa-user"></i> Nome Completo
-                            </label>
-                            <input type="text" id="name" name="name" required placeholder="Digite seu nome completo">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">
-                                <i class="fas fa-phone"></i> Telefone/WhatsApp
-                            </label>
-                            <input type="tel" id="phone" name="phone" required placeholder="(11) 99999-9999">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="service">
-                                <i class="fas fa-spa"></i> Serviço de Interesse
-                            </label>
-                            <select id="service" name="service" required>
-                                <option value="">Selecione um serviço</option>
-                                <option value="limpeza">Limpeza de Pele - R$ 160,00</option>
-                                <option value="massagem">Massagem Relaxante - R$ 150,00</option>
-                                <option value="drenagem">Drenagem Linfática - A partir de R$ 120,00</option>
-                                <option value="endermoterapia">Endermoterapia - R$ 79,99</option>
-                                <option value="peeling">Peeling de Diamante - R$ 79,99</option>
-                                <option value="laser">Depilação a Laser - A partir de R$ 59,99</option>
-                                <option value="verrugas">Remoção de Verrugas - A partir de R$ 99,99</option>
-                                <option value="spa">Spa dos Pés - R$ 99,99</option>
-                                <option value="emagrecimento">Protocolo de Emagrecimento - Consulte valores</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">
-                                <i class="fas fa-comment"></i> Observações (Opcional)
-                            </label>
-                            <textarea id="message" name="message" rows="3" placeholder="Data preferida, dúvidas ou informações adicionais..."></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-submit">
-                            <i class="fab fa-whatsapp"></i> Enviar para WhatsApp
-                        </button>
-                        
-                        <p class="form-obs">* Entraremos em contato em até 24h úteis</p>
-                    </form>
+                <!-- Controles do Carrossel -->
+                <button class="carrossel-prev" aria-label="Avaliação anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carrossel-next" aria-label="Próxima avaliação">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <div class="carrossel-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                    <span class="dot" data-slide="3"></span>
+                    <span class="dot" data-slide="4"></span>
+                    <span class="dot" data-slide="5"></span>
                 </div>
+            </div>
+            
+            <div class="instagram-cta">
+                <i class="fab fa-instagram"></i>
+                <p>Siga nosso <a href="https://www.instagram.com/vida_espaco_estetica" target="_blank">Instagram</a> para mais resultados e atualizações!</p>
             </div>
         </div>
     </section>
 
-    <!-- Contato Section -->
-    <section id="contato" class="contato">
+    <!-- Agendamento Section -->
+    <section id="agendamento" class="section-padding">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-subtitle">Contato</h2>
-                <h3 class="section-title">Fale Conosco</h3>
-                <div class="section-divider"></div>
+            <div class="section-title">
+                <h2>Agende seu Horário</h2>
+                <span></span>
+                <p>Escolha o melhor momento para cuidar de você.</p>
             </div>
-            
-            <div class="contato-content">
-                <div class="contato-info">
-                    <div class="contato-card">
-                        <div class="contato-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <h4>Endereço</h4>
-                        <p>Rua Guido Bonici, 117<br>
-                           Jardim Flamengo<br>
-                           São Paulo - SP<br>
-                           CEP: 03813-190</p>
-                        <a href="https://www.google.com/maps/dir/?api=1&destination=Rua+Guido+Bonici,+117,+São+Paulo,+SP" class="btn-mapa" target="_blank">
-                            <i class="fas fa-directions"></i> Traçar Rota
-                        </a>
-                    </div>
-                    
-                    <div class="contato-card">
-                        <div class="contato-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <h4>Telefone</h4>
-                        <p><strong>WhatsApp:</strong><br>(11) 96765-1240</p>
-                        <p><strong>Horário de Atendimento:</strong><br>Terça a Sábado: 9h às 18h</p>
-                    </div>
-                    
-                    <div class="contato-card">
-                        <div class="contato-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h4>E-mail</h4>
-                        <p>marciasalomao38@gmail.com</p>
-                        <p>Atendimento personalizado para dúvidas e informações.</p>
-                    </div>
-                </div>
+
+            <div class="contact-wrapper">
                 
-                <div class="mapa-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.122569257291!2d-46.47370392479247!3d-23.525733261120404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce6135dde1e925%3A0xc032bd90b2448648!2sR.%20Guido%20Bonici%2C%20117%20-%20Jardim%20Flamengo%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2003813-190!5e0!3m2!1spt-BR!2sbr!4v1690836254298!5m2!1spt-BR!2sbr" 
-                        width="100%" 
-                        height="450" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Localização da Vida Espaço Estética">
-                    </iframe>
+                <div class="contact-form-box">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nome Completo</label>
+                            <input type="text" id="name" placeholder="Ex: Maria Silva" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">WhatsApp</label>
+                            <input type="tel" id="phone" placeholder="(11) 99999-9999" required>
+                        </div>
+
+                       <div class="form-group">
+    <label for="service">Serviço Desejado</label>
+    <select id="service" required>
+        <option value="">Selecione um serviço...</option>
+        <option value="Limpeza de Pele" data-price="160.00">Limpeza de Pele - R$ 160,00</option>
+        <option value="Massagem Relaxante" data-price="150.00">Massagem Relaxante - R$ 150,00</option>
+        <option value="Drenagem Linfática" data-price="120.00">Drenagem Linfática - R$ 120,00</option>
+        <option value="Endermoterapia" data-price="79.99">Endermoterapia - R$ 79,99</option>
+        <option value="Peeling de Diamante" data-price="79.99">Peeling de Diamante - R$ 79,99</option>
+        <option value="Depilação a Laser" data-price="59.99">Depilação a Laser - R$ 59,99</option>
+        <option value="Remoção de Verrugas" data-price="99.99">Remoção de Verrugas - R$ 99,99</option>
+        <option value="Spa dos Pés" data-price="99.99">Spa dos Pés - R$ 99,99</option>
+        <option value="Protocolo de Emagrecimento" data-price="consulta">Protocolo de Emagrecimento - Consulte valores</option>
+    </select>
+    <div id="price-display" style="margin-top: 8px; font-size: 0.9rem; color: var(--primary-dark); font-weight: 500;">
+        <!-- Preço será exibido aqui -->
+    </div>
+</div>
+
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="date">Data</label>
+                                <input type="date" id="date" required>
+                            </div>
+                            <div class="form-group half">
+                                <label for="time">Horário</label>
+                                <select id="time" required disabled>
+                                    <option value="">Escolha a data primeiro</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Mensagem (Opcional)</label>
+                            <textarea id="message" rows="3" placeholder="Alguma observação?"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-full">Confirmar Agendamento</button>
+                    </form>
                 </div>
+
+                <div class="contact-info-box">
+                    <div class="info-card">
+                        <h3><i class="far fa-clock"></i> Horário de Atendimento</h3>
+                        <ul>
+                            <li><strong>Terça a Sexta:</strong><br> 09:00 às 18:00</li>
+                            <li><strong>Sábado:</strong><br> 09:00 às 16:00</li>
+                            <li class="closed"><strong>Dom e Seg:</strong> Fechado</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3><i class="fas fa-map-marker-alt"></i> Onde Estamos</h3>
+                        <p>Rua Guido Bonici, 117<br>Jardim das Flores - SP</p>
+                        <a href="https://maps.google.com/?q=Rua+Guido+Bonici,117" target="_blank" class="map-link">Ver no mapa <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="info-card highlight">
+                        <h3><i class="fab fa-whatsapp"></i> Dúvidas?</h3>
+                        <p>Fale diretamente conosco:</p>
+                        <a href="https://wa.me/5511967651240" class="btn-zap-outline">Chamar no WhatsApp</a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -693,13 +651,21 @@
                 </div>
             </div>
             
-            <div class="footer-bottom">
+           <div class="footer-bottom">
                 <p>&copy; 2024 Vida Espaço Estética. Todos os direitos reservados.</p>
                 <p class="developer">Desenvolvido com ❤️ por <strong>Gustavo Costa Trindade</strong></p>
+                
+                <div style="margin-top: 10px;">
+                    <a href="admin.html" title="Área Restrita" style="color: #666; font-size: 12px; opacity: 0.5; text-decoration: none;">
+                        <i class="fas fa-lock"></i> Admin 
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- Carregar Supabase apenas quando necessário -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>
 </body>
 </html>

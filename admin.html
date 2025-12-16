@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Admin - Vida Espaço Estética</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos do admin */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Montserrat', sans-serif;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .admin-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .header-admin {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #f0f0f0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .header-admin h2 {
+            color: #2c2c2c;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .header-controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-logout {
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        
+        .btn-logout:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 75, 43, 0.4);
+        }
+        
+        /* Tabela */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #5a8cff, #667eea);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+            vertical-align: middle;
+        }
+        
+        tr:hover {
+            background-color: #f8f9ff;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        tr:hover:nth-child(even) {
+            background-color: #f0f4ff;
+        }
+        
+        /* Cabeçalho de grupo de data */
+        .data-group-header {
+            background: linear-gradient(135deg, #eef5ff, #e0ebff) !important;
+            font-size: 1rem;
+            border-left: 5px solid #5a8cff;
+        }
+        
+        .data-group-header td {
+            padding: 12px 15px;
+            font-weight: 600;
+            color: #2c2c2c;
+        }
+        
+        /* Status */
+        .status-passado {
+            color: #6c757d;
+            font-size: 0.8rem;
+            background: #f8f9fa;
+            padding: 2px 8px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+        
+        .status-futuro {
+            color: #28a745;
+            font-size: 0.8rem;
+            background: #f0fff4;
+            padding: 2px 8px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+        
+        /* Botões de ação */
+        .btn-delete {
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .btn-delete:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 3px 10px rgba(255, 75, 43, 0.3);
+        }
+        
+        .btn-reminder {
+            background: linear-gradient(135deg, #ffd166, #ffb347);
+            color: #333;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-left: 5px;
+        }
+        
+        .btn-reminder:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 3px 10px rgba(255, 179, 71, 0.3);
+        }
+        
+        .btn-zap {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-zap:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 3px 10px rgba(37, 211, 102, 0.3);
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .admin-container {
+                padding: 15px;
+            }
+            
+            .header-admin {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .header-controls {
+                justify-content: center;
+            }
+            
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+            
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+            
+            tr {
+                margin-bottom: 15px;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                padding: 10px;
+                position: relative;
+            }
+            
+            td {
+                border: none;
+                position: relative;
+                padding-left: 50%;
+                padding-top: 8px;
+                padding-bottom: 8px;
+                text-align: left;
+            }
+            
+            td:before {
+                position: absolute;
+                top: 8px;
+                left: 15px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                font-weight: bold;
+                content: attr(data-label);
+                color: #5a8cff;
+            }
+            
+            .data-group-header td {
+                padding-left: 15px;
+                text-align: center;
+            }
+            
+            .data-group-header td:before {
+                display: none;
+            }
+        }
+        
+        /* Loading */
+        #loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #5a8cff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Filtros */
+        .filtros-container {
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #e0e7ff;
+        }
+        
+        .filtros-container input,
+        .filtros-container select {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+        
+        .filtros-container input:focus,
+        .filtros-container select:focus {
+            outline: none;
+            border-color: #5a8cff;
+            box-shadow: 0 0 0 3px rgba(90, 140, 255, 0.1);
+        }
+        
+        /* Estatísticas */
+        .admin-stats {
+            background: linear-gradient(135deg, #f0f7ff, #e8f0ff);
+            padding: 12px 20px;
+            border-radius: 10px;
+            margin-top: 10px;
+            border: 1px solid #d0e1ff;
+        }
+        
+        .admin-stats span {
+            padding: 5px 10px;
+            background: white;
+            border-radius: 6px;
+            margin-right: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        /* Notificações */
+        .admin-notification {
+            animation: slideIn 0.3s ease !important;
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <div class="header-admin">
+            <h2>
+                <i class="fas fa-calendar-alt"></i>
+                Gerenciamento de Agenda - Vida Espaço Estética
+            </h2>
+            <div class="header-controls">
+                <div class="admin-stats">
+                    <!-- Estatísticas serão injetadas aqui -->
+                </div>
+                <button onclick="window.location.href='index.html'" class="btn-logout">
+                    <i class="fas fa-home"></i> Voltar ao Site
+                </button>
+                <button onclick="window.location.reload()" class="btn-logout" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                    <i class="fas fa-sync-alt"></i> Atualizar
+                </button>
+            </div>
+        </div>
+
+        <!-- Filtros serão injetados aqui -->
+        
+        <p id="loading">
+            <div class="loading-spinner"></div>
+            Carregando agendamentos...
+        </p>
+
+        <table id="tabela-agendamentos" style="display:none;">
+            <thead>
+                <tr>
+                    <th>Horário</th>
+                    <th>Cliente</th>
+                    <th>Serviço</th>
+                    <th>Contato</th>
+                    <th>Data</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="lista-corpo">
+                <!-- Dados serão injetados aqui -->
+            </tbody>
+        </table>
+        
+        <div style="margin-top: 30px; text-align: center; color: #666; font-size: 0.9rem; padding-top: 20px; border-top: 1px solid #eee;">
+            <p>Painel Administrativo - Vida Espaço Estética</p>
+            <p><small>Atualizado em: <span id="current-time"></span></small></p>
+            <p><small>Total de registros: <span id="total-records">0</span></small></p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        // Atualizar hora atual
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleString('pt-BR', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+            document.getElementById('current-time').textContent = timeString;
+        }
+        
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+    <script src="admin.js"></script>
+</body>
+</html>
