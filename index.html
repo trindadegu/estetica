@@ -6,38 +6,54 @@
     <meta name="description" content="Vida Espaço Estética - Clínica de estética e bem-estar em São Paulo">
     <title>Vida Espaço Estética | Beleza & Bem-estar</title>
    
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>" type="image/svg+xml">
-<link rel="shortcut icon" href="#" />
-   
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>" type="image/svg+xml">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/solid.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css">
     
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        .map-container {
+            margin-top: 15px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            height: 250px;
+            width: 100%;
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
 </head>
 <body>
-    <!-- WhatsApp Float Button -->
     <a href="https://wa.me/5511967651240" class="whatsapp-float" target="_blank" aria-label="Fale conosco no WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Header/Navbar -->
     <header class="navbar">
         <div class="container">
             <div class="navbar-content">
                 <div class="logo">
                     <h1><span class="logo-text">Vida Espaço</span> Estética</h1>
                 </div>
-                <nav class="nav-menu">
-    <a href="#inicio" class="nav-link active">Início</a>
-    <a href="#sobre" class="nav-link">Sobre Nós</a>
-    <a href="#servicos" class="nav-link">Serviços</a>
-    <a href="#avaliacoes" class="nav-link">Avaliações</a>
-    <a href="#agendamento" class="nav-link btn-cta">Agendar Horário</a>
-</nav>
+               <nav class="nav-menu">
+                    <a href="#inicio" class="nav-link active">Início</a>
+                    <a href="#sobre" class="nav-link">Sobre Nós</a>
+                    <a href="#servicos" class="nav-link">Serviços</a>
+                    <a href="#avaliacoes" class="nav-link">Avaliações</a>
+
+                    <a href="https://www.instagram.com/vida_espaco_estetica" target="_blank" class="instagram-nav-btn" style="margin: 0 10px; align-self: center;" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                    <a href="#agendamento" class="nav-link btn-cta">Agendar Horário</a>
+                </nav>
                 <div class="hamburger">
                     <span></span>
                     <span></span>
@@ -47,7 +63,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section id="inicio" class="hero">
         <div class="hero-overlay"></div>
         <div class="container">
@@ -66,7 +81,6 @@
         </div>
     </section>
 
-    <!-- Sobre Nós Section -->
     <section id="sobre" class="sobre-destaque">
         <div class="container">
             <div class="section-header">
@@ -111,26 +125,11 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="sobre-stats">
-                        <div class="stat">
-                            <h6>+<span class="counter" data-target="500">0</span></h6>
-                            <p>Clientes Satisfeitas</p>
-                        </div>
-                        <div class="stat">
-                            <h6>+<span class="counter" data-target="10">0</span></h6>
-                            <p>Anos de Experiência</p>
-                        </div>
-                        <div class="stat">
-                            <h6><span class="counter" data-target="98">0</span>%</h6>
-                            <p>Taxa de Satisfação</p>
-                        </div>
-                    </div>
                 </div>
                 
                 <div class="sobre-image">
                     <div class="image-frame">
-                        <img loading="lazy" src="img/equipe.jpg" alt="Nossa Clínica - Ambiente aconchegante e profissional" 
+                        <img loading="lazy" src="img/equipe.jpg" alt="Nossa Clínica" 
                              onerror="this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                         <div class="image-badge">
                             <i class="fas fa-award"></i>
@@ -139,377 +138,166 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="sobre-missao">
-                <div class="missao-card">
-                    <i class="fas fa-eye"></i>
-                    <h4>Nossa Visão</h4>
-                    <p>Ser referência em tratamentos estéticos com qualidade e inovação.</p>
-                </div>
-                <div class="missao-card">
-                    <i class="fas fa-bullseye"></i>
-                    <h4>Nossa Missão</h4>
-                    <p>Oferecer bem-estar e autoestima através de serviços especializados.</p>
-                </div>
-                <div class="missao-card">
-                    <i class="fas fa-star"></i>
-                    <h4>Nossos Valores</h4>
-                    <p>Ética, profissionalismo, segurança e dedicação ao cliente.</p>
-                </div>
-            </div>
         </div>
     </section>
 
-    <!-- Serviços Section -->
-<section id="servicos" class="servicos">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-subtitle">Nossos Serviços</h2>
-            <h3 class="section-title">Tratamentos Especializados</h3>
-            <p class="section-description">Oferecemos uma variedade de serviços para cuidar da sua beleza e bem-estar</p>
-            
-            <!-- ADICIONE ESTE AVISO -->
-            <div style="margin: 15px 0 10px; padding: 10px; background: var(--primary-light); border-radius: 8px; font-size: 0.9rem;">
-                <i class="fas fa-mouse-pointer"></i> 
-                <strong>Dica:</strong> Clique em qualquer imagem para ir direto ao agendamento
+    <section id="servicos" class="servicos">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-subtitle">Nossos Serviços</h2>
+                <h3 class="section-title">Tratamentos Especializados</h3>
+                <p class="section-description">Oferecemos uma variedade completa de serviços para cuidar da sua beleza</p>
+                <div class="section-divider"></div>
             </div>
             
-            <div class="section-divider"></div>
-        </div>
-        <!-- ... resto do código ... -->
-            
             <div class="servicos-grid">
-                <!-- Limpeza de Pele -->
                 <div class="servico-card">
                     <div class="servico-image">
-                        <img loading="lazy" src="img/limpezapele.jpg" alt="Limpeza de Pele Profissional"
+                        <img loading="lazy" src="img/limpezapele.jpg" alt="Limpeza de Pele"
                              onerror="this.src='https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                         <div class="servico-overlay">
-                            <a href="#agendamento" class="btn-service">
-                                <i class="fas fa-calendar-alt"></i> Agendar Agora
-                            </a>
+                            <i class="fas fa-spa"></i>
                         </div>
                     </div>
                     <div class="servico-content">
-                        <div class="servico-header">
-                            <h4>Limpeza de Pele</h4>
-                            <span class="servico-price">R$ 160,00</span>
-                        </div>
-                        <p class="servico-description">Limpeza profunda com extração de impurezas e hidratação.</p>
-                        <ul class="servico-features">
-                            <li><i class="fas fa-check"></i> Limpeza profunda</li>
-                            <li><i class="fas fa-check"></i> Extração de cravos</li>
-                            <li><i class="fas fa-check"></i> Hidratação facial</li>
-                        </ul>
+                        <h4>Limpeza de Pele</h4>
+                        <p>Tratamento profundo que remove impurezas e revitaliza sua pele.</p>
+                        <div class="servico-preco">R$ 160,00</div>
+                        <a href="#agendamento" class="btn-servico">Agendar</a>
                     </div>
                 </div>
 
-                <!-- Massagem Relaxante -->
                 <div class="servico-card">
                     <div class="servico-image">
                         <img loading="lazy" src="img/massagem.jpg" alt="Massagem Relaxante"
                              onerror="this.src='https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                         <div class="servico-overlay">
-                            <a href="#agendamento" class="btn-service">
-                                <i class="fas fa-calendar-alt"></i> Agendar Agora
-                            </a>
+                            <i class="fas fa-hand-sparkles"></i>
                         </div>
                     </div>
                     <div class="servico-content">
-                        <div class="servico-header">
-                            <h4>Massagem Relaxante</h4>
-                            <span class="servico-price">R$ 150,00</span>
-                        </div>
-                        <p class="servico-description">Alívio do estresse e relaxamento muscular profundo.</p>
-                        <ul class="servico-features">
-                            <li><i class="fas fa-check"></i> Relaxamento muscular</li>
-                            <li><i class="fas fa-check"></i> Alívio do estresse</li>
-                            <li><i class="fas fa-check"></i> Melhora circulação</li>
-                        </ul>
+                        <h4>Massagem Relaxante</h4>
+                        <p>Alívio do estresse e tensões musculares com técnicas especializadas.</p>
+                        <div class="servico-preco">R$ 150,00</div>
+                        <a href="#agendamento" class="btn-servico">Agendar</a>
                     </div>
                 </div>
 
-                <!-- Drenagem Linfática -->
                 <div class="servico-card">
                     <div class="servico-image">
                         <img loading="lazy" src="img/drenagem.jpg" alt="Drenagem Linfática"
-                             onerror="this.src='https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                             onerror="this.src='https://images.unsplash.com/photo-1600334129128-685c5582fd8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                         <div class="servico-overlay">
-                            <a href="#agendamento" class="btn-service">
-                                <i class="fas fa-calendar-alt"></i> Agendar Agora
-                            </a>
+                            <i class="fas fa-water"></i>
                         </div>
                     </div>
                     <div class="servico-content">
-                        <div class="servico-header">
-                            <h4>Drenagem Linfática</h4>
-                            <span class="servico-price">A partir de R$ 120,00</span>
-                        </div>
-                        <p class="servico-description">Redução de inchaço e melhora da circulação sanguínea.</p>
-                        <ul class="servico-features">
-                            <li><i class="fas fa-check"></i> Redução de inchaço</li>
-                            <li><i class="fas fa-check"></i> Melhora circulatória</li>
-                            <li><i class="fas fa-check"></i> Eliminação de toxinas</li>
-                        </ul>
+                        <h4>Drenagem Linfática</h4>
+                        <p>Reduz retenção de líquidos e melhora a circulação.</p>
+                        <div class="servico-preco">R$ 120,00</div>
+                        <a href="#agendamento" class="btn-servico">Agendar</a>
                     </div>
                 </div>
 
-                <!-- Endermoterapia -->
                 <div class="servico-card">
                     <div class="servico-image">
-                        <img loading="lazy" src="img/diamante.jpg" alt="Endermoterapia Facial"
-                             onerror="this.src='https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        <img loading="lazy" src="img/endermo.jpg" alt="Endermoterapia"
+                             onerror="this.src='https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                         <div class="servico-overlay">
-                            <a href="#agendamento" class="btn-service">
-                                <i class="fas fa-calendar-alt"></i> Agendar Agora
-                            </a>
+                            <i class="fas fa-magic"></i>
                         </div>
                     </div>
                     <div class="servico-content">
-                        <div class="servico-header">
-                            <h4>Endermoterapia</h4>
-                            <span class="servico-price">R$ 79,99</span>
-                        </div>
-                        <p class="servico-description">Tratamento avançado com vácuo e roletes para revitalização profunda da pele.</p>
-                        <ul class="servico-features">
-                            <li><i class="fas fa-check"></i> Revitalização facial</li>
-                            <li><i class="fas fa-check"></i> Estimula colágeno</li>
-                            <li><i class="fas fa-check"></i> Melhora textura</li>
-                        </ul>
+                        <h4>Endermoterapia</h4>
+                        <p>Tratamento corporal que combate celulite e flacidez.</p>
+                        <div class="servico-preco">R$ 79,99</div>
+                        <a href="#agendamento" class="btn-servico">Agendar</a>
                     </div>
                 </div>
 
-                <!-- Peeling de Diamante -->
                 <div class="servico-card">
                     <div class="servico-image">
-                        <img loading="lazy" src="img/sla.jpg" alt="Peeling de Diamante"
-                             onerror="this.src='https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        <img loading="lazy" src="img/peeling.jpg" alt="Peeling de Diamante"
+                             onerror="this.src='https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                         <div class="servico-overlay">
-                            <a href="#agendamento" class="btn-service">
-                                <i class="fas fa-calendar-alt"></i> Agendar Agora
-                            </a>
+                            <i class="fas fa-gem"></i>
                         </div>
                     </div>
                     <div class="servico-content">
-                        <div class="servico-header">
-                            <h4>Peeling de Diamante</h4>
-                            <span class="servico-price">R$ 79,99</span>
-                        </div>
-                        <p class="servico-description">Renovação celular com microdermoabrasão controlada para pele suave e uniforme.</p>
-                        <ul class="servico-features">
-                            <li><i class="fas fa-check"></i> Renovação celular</li>
-                            <li><i class="fas fa-check"></i> Uniformiza textura</li>
-                            <li><i class="fas fa-check"></i> Brilho natural</li>
-                        </ul>
+                        <h4>Peeling de Diamante</h4>
+                        <p>Renovação celular para uma pele mais uniforme e radiante.</p>
+                        <div class="servico-preco">R$ 79,99</div>
+                        <a href="#agendamento" class="btn-servico">Agendar</a>
                     </div>
                 </div>
 
-                <!-- Depilação a Laser -->
                 <div class="servico-card">
                     <div class="servico-image">
-                        <img loading="lazy" src="img/laser.jpg" alt="Depilação a Laser"
-                             onerror="this.src='https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        <img loading="lazy" src="img/depilacao.jpg" alt="Depilação a Laser"
+                             onerror="this.src='https://images.unsplash.com/photo-1522337660859-02fbefca4702?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                         <div class="servico-overlay">
-                            <a href="#agendamento" class="btn-service">
-                                <i class="fas fa-calendar-alt"></i> Agendar Agora
-                            </a>
+                            <i class="fas fa-bolt"></i>
                         </div>
                     </div>
                     <div class="servico-content">
-                        <div class="servico-header">
-                            <h4>Depilação a Laser</h4>
-                            <span class="servico-price">A partir de R$ 59,99</span>
-                        </div>
-                        <p class="servico-description">Método avançado para remoção duradoura de pelos indesejados.</p>
-                        <ul class="servico-features">
-                            <li><i class="fas fa-check"></i> Resultado duradouro</li>
-                            <li><i class="fas fa-check"></i> Técnica avançada</li>
-                            <li><i class="fas fa-check"></i> Áreas diversas</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Remoção de Verrugas -->
-                <div class="servico-card">
-                    <div class="servico-image">
-                        <img loading="lazy" src="img/verruga.jpg" alt="Remoção de Verrugas"
-                             onerror="this.src='https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
-                        <div class="servico-overlay">
-                            <a href="#agendamento" class="btn-service">
-                                <i class="fas fa-calendar-alt"></i> Agendar Agora
-                            </a>
-                        </div>
-                    </div>
-                    <div class="servico-content">
-                        <div class="servico-header">
-                            <h4>Remoção de Verrugas</h4>
-                            <span class="servico-price">A partir de R$ 99,99</span>
-                        </div>
-                        <p class="servico-description">Técnica moderna com jato de plasma para remoção segura.</p>
-                        <ul class="servico-features">
-                            <li><i class="fas fa-check"></i> Técnica moderna</li>
-                            <li><i class="fas fa-check"></i> Remoção segura</li>
-                            <li><i class="fas fa-check"></i> Sem cicatrizes</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Spa dos Pés -->
-                <div class="servico-card">
-                    <div class="servico-image">
-                        <img loading="lazy" src="img/spape.jpg" alt="Spa dos Pés"
-                             onerror="this.src='https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
-                        <div class="servico-overlay">
-                            <a href="#agendamento" class="btn-service">
-                                <i class="fas fa-calendar-alt"></i> Agendar Agora
-                            </a>
-                        </div>
-                    </div>
-                    <div class="servico-content">
-                        <div class="servico-header">
-                            <h4>Spa dos Pés</h4>
-                            <span class="servico-price">R$ 99,99</span>
-                        </div>
-                        <p class="servico-description">Relaxamento completo para pés cansados e bem-estar geral.</p>
-                        <ul class="servico-features">
-                            <li><i class="fas fa-check"></i> Relaxamento profundo</li>
-                            <li><i class="fas fa-check"></i> Esfoliação</li>
-                            <li><i class="fas fa-check"></i> Hidratação intensa</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Protocolo de Emagrecimento -->
-                <div class="servico-card">
-                    <div class="servico-image">
-                        <img loading="lazy" src="img/emagrecimento.jpg" alt="Protocolo de Emagrecimento"
-                             onerror="this.src='https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
-                        <div class="servico-overlay">
-                            <a href="#agendamento" class="btn-service">
-                                <i class="fas fa-calendar-alt"></i> Agendar Agora
-                            </a>
-                        </div>
-                    </div>
-                    <div class="servico-content">
-                        <div class="servico-header">
-                            <h4>Protocolo de Emagrecimento</h4>
-                            <span class="servico-price">Consulte valores</span>
-                        </div>
-                        <p class="servico-description">Tratamento personalizado para redução de medidas e gordura.</p>
-                        <ul class="servico-features">
-                            <li><i class="fas fa-check"></i> Avaliação personalizada</li>
-                            <li><i class="fas fa-check"></i> Protocolo individual</li>
-                            <li><i class="fas fa-check"></i> Acompanhamento</li>
-                        </ul>
+                        <h4>Depilação a Laser</h4>
+                        <p>Tecnologia avançada para remoção definitiva de pelos.</p>
+                        <div class="servico-preco">A partir de R$ 59,99</div>
+                        <a href="#agendamento" class="btn-servico">Agendar</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Horário Section -->
-    <section class="horario-section">
-        <div class="container">
-            <div class="horario-content">
-                <div class="horario-info">
-                    <h3><i class="fas fa-clock"></i> Horário de Atendimento</h3>
-                    <div class="horario-lista">
-                        <div class="horario-item">
-                            <span class="dia">Segunda-feira</span>
-                            <span class="status fechado">Fechado</span>
-                        </div>
-                        <div class="horario-item">
-                            <span class="dia">Terça a Sexta</span>
-                            <span class="status">09:00 - 18:00</span>
-                        </div>
-                        <div class="horario-item">
-                            <span class="dia">Sábado</span>
-                            <span class="status">09:00 - 16:00</span>
-                        </div>
-                        <div class="horario-item">
-                            <span class="dia">Domingo</span>
-                            <span class="status fechado">Fechado</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="horario-imagem">
-                    <img loading="lazy" src="img/frenteespaco.jpg" alt="Nosso Espaço de Atendimento"
-                         onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Avaliações Section -->
-    <section id="avaliacoes" class="avaliacoes-section">
+    <section id="avaliacoes" class="avaliacoes">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-subtitle">Avaliações</h2>
-                <h3 class="section-title">Resultados Reais</h3>
-                <p class="section-description">Veja os depoimentos de nossas clientes satisfeitas</p>
+                <h2 class="section-subtitle">Depoimentos</h2>
+                <h3 class="section-title">O que nossos clientes dizem</h3>
                 <div class="section-divider"></div>
             </div>
             
-            <!-- Carrossel de Avaliações - Apenas Imagens -->
-            <div class="avaliacoes-carrossel">
-                <div class="carrossel-container">
-                    <!-- Imagem 1 -->
-                    <div class="carrossel-slide active">
-                        <img loading="lazy" src="img/avaliacao1.jpg" alt="Depoimento de cliente sobre hidratação">
+            <div class="carrossel-avaliacoes">
+                <div class="carrossel-slide active">
+                    <div class="avaliacao-card">
+                        <div class="estrelas">★★★★★</div>
+                        <p class="avaliacao-texto">"Profissionais extremamente qualificados! A limpeza de pele é maravilhosa e o ambiente é muito acolhedor. Super recomendo!"</p>
+                        <div class="avaliacao-autor">
+                            <strong>Maria Silva</strong>
+                            <span>Cliente desde 2022</span>
+                        </div>
                     </div>
-                    
-                    <!-- Imagem 2 -->
-                    <div class="carrossel-slide">
-                        <img loading="lazy" src="img/avaliacao2.jpg" alt="Resultados de redução de medidas">
+                </div>
+
+                <div class="carrossel-slide">
+                    <div class="avaliacao-card">
+                        <div class="estrelas">★★★★★</div>
+                        <p class="avaliacao-texto">"Melhor massagem relaxante que já fiz! Saio renovada de cada sessão. Equipe atenciosa e profissional."</p>
+                        <div class="avaliacao-autor">
+                            <strong>Ana Paula</strong>
+                            <span>Cliente desde 2021</span>
+                        </div>
                     </div>
-                    
-                    <!-- Imagem 3 -->
-                    <div class="carrossel-slide">
-                        <img loading="lazy" src="img/avaliacao3.jpg" alt="Depoimento sobre tratamento capilar">
-                    </div>
-                    
-                    <!-- Imagem 4 -->
-                    <div class="carrossel-slide">
-                        <img loading="lazy" src="img/avaliacao4.jpg" alt="Resultado de crioterapia - perda de peso">
-                    </div>
-                    
-                    <!-- Imagem 5 -->
-                    <div class="carrossel-slide">
-                        <img loading="lazy" src="img/avaliacao5.jpg" alt="Depoimento sobre bem-estar pós-tratamento">
-                    </div>
-                    
-                    <!-- Imagem 6 -->
-                    <div class="carrossel-slide">
-                        <img loading="lazy" src="img/avaliacao6.jpg" alt="Feedback sobre atendimento e ambiente">
+                </div>
+
+                <div class="carrossel-slide">
+                    <div class="avaliacao-card">
+                        <div class="estrelas">★★★★★</div>
+                        <p class="avaliacao-texto">"Atendimento personalizado e resultados incríveis! A drenagem linfática fez toda diferença. Indico de olhos fechados!"</p>
+                        <div class="avaliacao-autor">
+                            <strong>Juliana Costa</strong>
+                            <span>Cliente desde 2023</span>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Controles do Carrossel -->
-                <button class="carrossel-prev" aria-label="Avaliação anterior">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="carrossel-next" aria-label="Próxima avaliação">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-                
-                <div class="carrossel-dots">
-                    <span class="dot active" data-slide="0"></span>
-                    <span class="dot" data-slide="1"></span>
-                    <span class="dot" data-slide="2"></span>
-                    <span class="dot" data-slide="3"></span>
-                    <span class="dot" data-slide="4"></span>
-                    <span class="dot" data-slide="5"></span>
-                </div>
-            </div>
-            
-            <div class="instagram-cta">
-                <i class="fab fa-instagram"></i>
-                <p>Siga nosso <a href="https://www.instagram.com/vida_espaco_estetica" target="_blank">Instagram</a> para mais resultados e atualizações!</p>
+                <button class="carrossel-prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="carrossel-next"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
 
-    <!-- Agendamento Section -->
     <section id="agendamento" class="section-padding">
         <div class="container">
             <div class="section-title">
@@ -523,41 +311,40 @@
                 <div class="contact-form-box">
                     <form id="contactForm">
                         <div class="form-group">
-                            <label for="name">Nome Completo</label>
+                            <label for="name">Nome Completo *</label>
                             <input type="text" id="name" placeholder="Ex: Maria Silva" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="phone">WhatsApp</label>
-                            <input type="tel" id="phone" placeholder="(11) 99999-9999" required>
+                            <label for="phone">WhatsApp *</label>
+                            <input type="tel" id="phone" placeholder="Digite apenas os números" maxlength="15" required>
+                            <small style="color: #666; font-size: 0.85rem;">Digite apenas números, a formatação será automática</small>
                         </div>
 
                        <div class="form-group">
-    <label for="service">Serviço Desejado</label>
-    <select id="service" required>
-        <option value="">Selecione um serviço...</option>
-        <option value="Limpeza de Pele" data-price="160.00">Limpeza de Pele - R$ 160,00</option>
-        <option value="Massagem Relaxante" data-price="150.00">Massagem Relaxante - R$ 150,00</option>
-        <option value="Drenagem Linfática" data-price="120.00">Drenagem Linfática - R$ 120,00</option>
-        <option value="Endermoterapia" data-price="79.99">Endermoterapia - R$ 79,99</option>
-        <option value="Peeling de Diamante" data-price="79.99">Peeling de Diamante - R$ 79,99</option>
-        <option value="Depilação a Laser" data-price="59.99">Depilação a Laser - R$ 59,99</option>
-        <option value="Remoção de Verrugas" data-price="99.99">Remoção de Verrugas - R$ 99,99</option>
-        <option value="Spa dos Pés" data-price="99.99">Spa dos Pés - R$ 99,99</option>
-        <option value="Protocolo de Emagrecimento" data-price="consulta">Protocolo de Emagrecimento - Consulte valores</option>
-    </select>
-    <div id="price-display" style="margin-top: 8px; font-size: 0.9rem; color: var(--primary-dark); font-weight: 500;">
-        <!-- Preço será exibido aqui -->
-    </div>
-</div>
+                            <label for="service">Serviço Desejado *</label>
+                            <select id="service" required>
+                                <option value="">Selecione um serviço...</option>
+                                <option value="Limpeza de Pele" data-price="160.00">Limpeza de Pele - R$ 160,00</option>
+                                <option value="Massagem Relaxante" data-price="150.00">Massagem Relaxante - R$ 150,00</option>
+                                <option value="Drenagem Linfática" data-price="120.00">Drenagem Linfática - R$ 120,00</option>
+                                <option value="Endermoterapia" data-price="79.99">Endermoterapia - R$ 79,99</option>
+                                <option value="Peeling de Diamante" data-price="79.99">Peeling de Diamante - R$ 79,99</option>
+                                <option value="Depilação a Laser" data-price="59.99">Depilação a Laser - R$ 59,99</option>
+                                <option value="Remoção de Verrugas" data-price="99.99">Remoção de Verrugas - R$ 99,99</option>
+                                <option value="Spa dos Pés" data-price="99.99">Spa dos Pés - R$ 99,99</option>
+                                <option value="Protocolo de Emagrecimento" data-price="consulta">Protocolo de Emagrecimento - Consulte valores</option>
+                            </select>
+                            <div id="price-display" style="margin-top: 8px; font-size: 0.9rem; color: var(--primary-dark); font-weight: 500;"></div>
+                        </div>
 
                         <div class="form-row">
                             <div class="form-group half">
-                                <label for="date">Data</label>
+                                <label for="date">Data *</label>
                                 <input type="date" id="date" required>
                             </div>
                             <div class="form-group half">
-                                <label for="time">Horário</label>
+                                <label for="time">Horário *</label>
                                 <select id="time" required disabled>
                                     <option value="">Escolha a data primeiro</option>
                                 </select>
@@ -569,7 +356,9 @@
                             <textarea id="message" rows="3" placeholder="Alguma observação?"></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-full">Confirmar Agendamento</button>
+                        <button type="submit" class="btn btn-full">
+                            <i class="fas fa-calendar-check"></i> Confirmar Agendamento
+                        </button>
                     </form>
                 </div>
 
@@ -586,7 +375,18 @@
                     <div class="info-card">
                         <h3><i class="fas fa-map-marker-alt"></i> Onde Estamos</h3>
                         <p>Rua Guido Bonici, 117<br>Jardim das Flores - SP</p>
-                        <a href="https://maps.google.com/?q=Rua+Guido+Bonici,117" target="_blank" class="map-link">Ver no mapa <i class="fas fa-arrow-right"></i></a>
+                        
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.1764619717013!2d-46.79155522374661!3d-23.53509936029969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ceff8bd0316489%3A0x6734139855546055!2sRua%20Guido%20Bonici%2C%20117%20-%20Jardim%20das%20Flores%2C%20Osasco%20-%20SP%2C%2006120-030!5e0!3m2!1spt-BR!2sbr!4v1709400000000!5m2!1spt-BR!2sbr" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        
+                        <a href="https://www.google.com/maps/dir//Rua+Guido+Bonici,+117+-+Jardim+das+Flores,+Osasco+-+SP" target="_blank" class="btn-zap-outline" style="margin-top: 15px; width: 100%; text-align: center;">
+                            <i class="fas fa-location-arrow"></i> Como chegar
+                        </a>
                     </div>
                     
                     <div class="info-card highlight">
@@ -600,25 +400,16 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col">
                     <div class="footer-logo">
                         <h3>Vida Espaço Estética</h3>
-                        <p>Beleza e bem-estar para renovar sua autoestima</p>
                     </div>
                     <div class="footer-social">
-                        <a href="https://www.instagram.com/vida_espaco_estetica" class="social-icon" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://facebook.com" class="social-icon" target="_blank">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://wa.me/5511967651240" class="social-icon" target="_blank">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
+                        <a href="https://www.instagram.com/vida_espaco_estetica" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5511967651240" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 
@@ -626,35 +417,22 @@
                     <h4>Links Rápidos</h4>
                     <ul class="footer-links">
                         <li><a href="#inicio">Início</a></li>
-                        <li><a href="#sobre">Sobre Nós</a></li>
                         <li><a href="#servicos">Serviços</a></li>
                         <li><a href="#agendamento">Agendamento</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-col">
-                    <h4>Horário de Funcionamento</h4>
-                    <ul class="footer-horario">
-                        <li>Terça a Sexta: 9h - 18h</li>
-                        <li>Sábado: 9h - 16h</li>
-                        <li>Domingo e Segunda: Fechado</li>
-                    </ul>
-                </div>
-                
+
                 <div class="footer-col">
                     <h4>Contato</h4>
                     <ul class="footer-contato">
                         <li><i class="fas fa-phone"></i> (11) 96765-1240</li>
                         <li><i class="fas fa-map-marker-alt"></i> Rua Guido Bonici, 117</li>
-                        <li><i class="fas fa-envelope"></i> marciasalomao38@gmail.com</li>
                     </ul>
                 </div>
             </div>
             
            <div class="footer-bottom">
-                <p>&copy; 2024 Vida Espaço Estética. Todos os direitos reservados.</p>
-                <p class="developer">Desenvolvido com ❤️ por <strong>Gustavo Costa Trindade</strong></p>
-                
+                <p>© 2024 Vida Espaço Estética.</p>
                 <div style="margin-top: 10px;">
                     <a href="admin.html" title="Área Restrita" style="color: #666; font-size: 12px; opacity: 0.5; text-decoration: none;">
                         <i class="fas fa-lock"></i> Admin 
@@ -664,8 +442,9 @@
         </div>
     </footer>
 
-    <!-- Carregar Supabase apenas quando necessário -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>
+
 </body>
 </html>
