@@ -69,36 +69,29 @@ async function testarConexao() {
 // ========================================
 
 function configurarBotoesServico() {
-    // Seleciona todos os botões "Agendar" dos cards de serviço
     const botoesAgendar = document.querySelectorAll('.btn-servico');
     
     botoesAgendar.forEach(botao => {
         botao.addEventListener('click', function(e) {
             e.preventDefault();
             
-            // Pega o nome do serviço do card
             const card = this.closest('.servico-card');
             const nomeServico = card.querySelector('.servico-content h4').textContent.trim();
             
             console.log('🎯 Serviço selecionado:', nomeServico);
             
-            // Salva no localStorage para usar depois
             localStorage.setItem('servicoSelecionado', nomeServico);
             
-            // Vai para a seção de agendamento
             const secaoAgendamento = document.getElementById('agendamento');
             secaoAgendamento.scrollIntoView({ behavior: 'smooth' });
             
-            // Aguarda um pouco e seleciona o serviço
             setTimeout(() => {
                 const selectServico = document.getElementById('service');
                 if (selectServico) {
-                    // Procura a opção que contém o nome do serviço
                     const opcoes = selectServico.options;
                     for (let i = 0; i < opcoes.length; i++) {
                         if (opcoes[i].value.includes(nomeServico) || opcoes[i].text.includes(nomeServico)) {
                             selectServico.selectedIndex = i;
-                            // Dispara o evento change para atualizar o preço
                             selectServico.dispatchEvent(new Event('change'));
                             console.log('✅ Serviço selecionado automaticamente no formulário');
                             break;
@@ -112,7 +105,6 @@ function configurarBotoesServico() {
     console.log('✅ Botões de serviço configurados:', botoesAgendar.length);
 }
 
-// Verificar se há serviço na URL (para links diretos)
 function verificarServicoNaURL() {
     const urlParams = new URLSearchParams(window.location.search);
     const servicoURL = urlParams.get('servico');
@@ -141,7 +133,6 @@ function verificarServicoNaURL() {
 // ========================================
 
 function iniciarSistemaAgendamento() {
-    // Elementos do formulário
     const inputData = document.getElementById('date');
     const inputHorario = document.getElementById('time');
     const inputTelefone = document.getElementById('phone');
@@ -157,13 +148,11 @@ function iniciarSistemaAgendamento() {
         selectServico: !!selectServico
     });
 
-    // 1. Máscara automática para telefone
     if (inputTelefone) {
         inputTelefone.addEventListener('input', function(e) {
-            let valor = e.target.value.replace(/\D/g, ''); // Remove tudo que não é número
+            let valor = e.target.value.replace(/\D/g, '');
             
             if (valor.length <= 11) {
-                // Aplica máscara (11) 99999-9999
                 valor = valor.replace(/^(\d{2})(\d)/g, '($1) $2');
                 valor = valor.replace(/(\d)(\d{4})$/, '$1-$2');
             }
@@ -173,7 +162,6 @@ function iniciarSistemaAgendamento() {
         console.log('✅ Máscara de telefone ativada');
     }
 
-    // 2. Exibir preço do serviço selecionado
     if (selectServico && priceDisplay) {
         selectServico.addEventListener('change', function() {
             const selectedOption = this.options[this.selectedIndex];
@@ -190,12 +178,10 @@ function iniciarSistemaAgendamento() {
         console.log('✅ Exibição de preços ativada');
     }
 
-    // 3. Configurar data mínima (hoje)
     if (inputData) {
         const hoje = new Date().toISOString().split('T')[0];
         inputData.setAttribute('min', hoje);
         
-        // Quando a data mudar, carregar horários
         inputData.addEventListener('change', function() {
             const dataSelecionada = this.value;
             console.log('📅 Data selecionada:', dataSelecionada);
@@ -206,7 +192,6 @@ function iniciarSistemaAgendamento() {
         console.log('✅ Campo de data configurado (min:', hoje, ')');
     }
 
-    // 4. Submissão do formulário
     if (form) {
         form.addEventListener('submit', enviarAgendamento);
         console.log('✅ Formulário de agendamento vinculado');
@@ -222,21 +207,21 @@ async function carregarHorariosDisponiveis(dataSelecionada) {
         return;
     }
 
-    // Habilita o select e mostra loading
     selectHorario.disabled = false;
     selectHorario.innerHTML = '<option value="">⏳ Carregando horários...</option>';
 
     try {
         console.log('🔍 Buscando horários para:', dataSelecionada);
 
-        // Verifica se é domingo
         const dataObj = new Date(dataSelecionada + 'T00:00:00');
         const diaSemana = dataObj.getDay();
         
-        if (diaSemana === 0) { // Domingo
-            selectHorario.innerHTML = '<option value="">🚫 Fechado aos domingos</option>';
+        // Verifica dias de funcionamento: 0=Dom, 1=Seg -> Fechado
+        if (diaSemana === 0 || diaSemana === 1) {
+            const diaExtenso = diaSemana === 0 ? 'domingos' : 'segundas-feiras';
+            selectHorario.innerHTML = `<option value="">🚫 Fechado às ${diaExtenso}</option>`;
             selectHorario.disabled = true;
-            console.log('⚠️ Domingo selecionado - fechado');
+            console.log(`⚠️ Dia selecionado (${diaExtenso}) - fechado`);
             return;
         }
 
@@ -253,14 +238,11 @@ async function carregarHorariosDisponiveis(dataSelecionada) {
 
         console.log('📊 Agendamentos encontrados:', agendamentos);
 
-        // Pega apenas os horários ocupados
         const horariosOcupados = (agendamentos || []).map(item => item.horario);
         console.log('🔒 Horários ocupados:', horariosOcupados);
 
-        // Limpa o select
         selectHorario.innerHTML = '<option value="">Selecione um horário</option>';
 
-        // Adiciona os horários disponíveis
         let temDisponivel = false;
         HORARIOS.forEach(hora => {
             if (!horariosOcupados.includes(hora)) {
@@ -287,7 +269,7 @@ async function carregarHorariosDisponiveis(dataSelecionada) {
     }
 }
 
-// Enviar agendamento
+// Enviar agendamento (igual ao original, sem alterações além do já existente)
 async function enviarAgendamento(e) {
     e.preventDefault();
     
@@ -309,7 +291,6 @@ async function enviarAgendamento(e) {
         mensagem
     });
 
-    // Validações
     if (!nome || !telefone || !servico || !data || !horario) {
         alert("⚠️ Preencha todos os campos obrigatórios!");
         console.log('❌ Validação falhou - campos obrigatórios vazios');
@@ -325,7 +306,6 @@ async function enviarAgendamento(e) {
     try {
         console.log('🚀 Enviando para o Supabase...');
         
-        // Prepara objeto para inserção
         const dadosAgendamento = {
             nome: nome,
             telefone: telefone,
@@ -336,7 +316,6 @@ async function enviarAgendamento(e) {
 
         console.log('📦 Objeto a ser inserido:', dadosAgendamento);
 
-        // Insere no banco
         const { data: resultado, error } = await supabaseClient
             .from('agendamentos')
             .insert([dadosAgendamento])
@@ -351,13 +330,10 @@ async function enviarAgendamento(e) {
 
         console.log('✅ Agendamento inserido com sucesso!', resultado);
 
-        // Formata a data para exibição
         const dataFormatada = new Date(data + 'T00:00:00').toLocaleDateString('pt-BR');
 
-        // Limpa o localStorage
         localStorage.removeItem('servicoSelecionado');
 
-        // Prepara mensagem para WhatsApp
         const mensagemWhatsApp = `Olá! Acabei de agendar:\n\n` +
             `👤 Nome: ${nome}\n` +
             `📅 Data: ${dataFormatada}\n` +
@@ -365,21 +341,15 @@ async function enviarAgendamento(e) {
             `💆 Serviço: ${servico}\n\n` +
             `Aguardo a confirmação! 😊`;
 
-        // Codifica a mensagem para URL
         const mensagemCodificada = encodeURIComponent(mensagemWhatsApp);
-        
-        // Monta o link do WhatsApp
         const linkWhatsApp = `https://wa.me/${WHATSAPP_EMPRESA}?text=${mensagemCodificada}`;
 
         console.log('📱 Redirecionando para WhatsApp...');
 
-        // Mostra mensagem de sucesso
         alert(`✅ Agendamento confirmado!\n\n📅 Data: ${dataFormatada}\n⏰ Horário: ${horario}\n💆 Serviço: ${servico}\n\nVocê será redirecionado para o WhatsApp para confirmar!`);
         
-        // Redireciona para WhatsApp
         window.open(linkWhatsApp, '_blank');
         
-        // Aguarda um pouco e recarrega a página
         setTimeout(() => {
             window.location.reload();
         }, 2000);
@@ -409,11 +379,10 @@ async function enviarAgendamento(e) {
 }
 
 // ========================================
-// MENU MOBILE E CARROSSEL
+// MENU MOBILE E CARROSSEL (inalterados)
 // ========================================
 
 function iniciarMenuECarrossel() {
-    // Menu Mobile
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     
@@ -423,7 +392,6 @@ function iniciarMenuECarrossel() {
             hamburger.classList.toggle('active');
         });
 
-        // Fechar menu ao clicar em um link
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -434,7 +402,6 @@ function iniciarMenuECarrossel() {
         console.log('✅ Menu mobile configurado');
     }
 
-    // Carrossel de Avaliações
     iniciarCarrossel();
 }
 
@@ -450,28 +417,21 @@ function iniciarCarrossel() {
 
     let currentSlide = 0;
 
-    // Mostra o slide atual
     function mostrarSlide(index) {
-        // Remove active de todos
         slides.forEach(slide => slide.classList.remove('active'));
-        
-        // Adiciona active no atual
         slides[index].classList.add('active');
     }
 
-    // Próximo slide
     function proximoSlide() {
         currentSlide = (currentSlide + 1) % slides.length;
         mostrarSlide(currentSlide);
     }
 
-    // Slide anterior
     function slideAnterior() {
         currentSlide = (currentSlide - 1 + slides.length) % slides.length;
         mostrarSlide(currentSlide);
     }
 
-    // Botões de navegação
     if (btnNext) {
         btnNext.addEventListener('click', proximoSlide);
     }
@@ -480,20 +440,12 @@ function iniciarCarrossel() {
         btnPrev.addEventListener('click', slideAnterior);
     }
 
-    // Auto-play a cada 5 segundos
     setInterval(proximoSlide, 5000);
-
-    // Inicializa mostrando o primeiro slide
     mostrarSlide(0);
 
     console.log('✅ Carrossel iniciado com', slides.length, 'slides');
 }
 
-// ========================================
-// SCROLL SUAVE E NAVBAR ATIVA
-// ========================================
-
-// Destaca o link ativo no menu conforme o scroll
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section[id]');
     const scrollY = window.pageYOffset;

@@ -2,7 +2,8 @@
 // ADMIN.JS - VERSÃO CORRIGIDA E COMPLETA
 // ========================================
 
-// 1. SEGURANÇA
+// 1. SEGURANÇA (ATENÇÃO: senha hardcoded no front-end NÃO é segura para produção.
+// Considere usar autenticação real em um ambiente público.)
 const SENHA_CORRETA = "admin123";
 let tentativas = 0;
 const MAX_TENTATIVAS = 3;

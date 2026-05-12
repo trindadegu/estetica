@@ -5,41 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel Admin - Vida Espaço Estética</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Montserrat', sans-serif; background: #f4f6f9; padding: 20px; }
-        .admin-container { max-width: 1200px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        h2 { color: #333; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        
-        .top-bar { display: flex; justify-content: space-between; margin-bottom: 20px; }
-        button { padding: 10px 20px; cursor: pointer; border: none; border-radius: 5px; font-weight: bold; }
-        #btn-atualizar { background: #5a8cff; color: white; }
-        #btn-logout { background: #dc3545; color: white; }
-        
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
-        th { background-color: #f8f9fa; color: #555; }
-        tr:hover { background-color: #f1f1f1; }
-        
-        .btn-delete { background: #ff4d4d; color: white; padding: 5px 10px; font-size: 0.8rem; }
-        
-        @media (max-width: 768px) {
-            table, thead, tbody, th, td, tr { display: block; }
-            thead tr { position: absolute; top: -9999px; left: -9999px; }
-            tr { margin-bottom: 15px; border: 1px solid #ccc; }
-            td { border: none; position: relative; padding-left: 50%; }
-            td:before { position: absolute; left: 10px; font-weight: bold; content: attr(data-label); }
-        }
-    </style>
-</head>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel Admin - Vida Espaço Estética</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <style>
         body { font-family: 'Montserrat', sans-serif; background: #f4f6f9; padding: 20px; }
         .admin-container { max-width: 1200px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
@@ -47,7 +13,6 @@
         
         .top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px; }
         
-        /* NOVO: Estilos para os filtros */
         .filters { display: flex; gap: 10px; align-items: center; background: #f8f9fa; padding: 10px; border-radius: 8px; }
         .filters input, .filters select { padding: 8px; border: 1px solid #ddd; border-radius: 5px; outline: none; }
         .filters label { font-size: 0.9rem; font-weight: 600; color: #555; }
@@ -63,11 +28,9 @@
         th { background: #f8f9fa; color: #333; font-weight: 600; }
         tr:hover { background: #f1f1f1; }
         
-        /* Estilo do botão de Excluir */
         .btn-delete { background: #ffeded; color: #dc3545; padding: 5px 10px; font-size: 0.8rem; border: 1px solid #dc3545; }
         .btn-delete:hover { background: #dc3545; color: white; }
 
-        /* Estilo do botão WhatsApp */
         .btn-whatsapp { 
             background: #e6ffed; 
             color: #25D366; 
@@ -114,7 +77,7 @@
                 <label for="filtro-servico">Serviço:</label>
                 <select id="filtro-servico">
                     <option value="">Todos os serviços</option>
-                    </select>
+                </select>
             </div>
             <div style="margin-left: auto; font-size: 0.9rem; color: #666;">
                 Exibindo: <b id="contador-filtrado">0</b>
@@ -126,12 +89,13 @@
                 <tr>
                     <th>Nome</th>
                     <th>Serviço</th>
-                    <th>Contato</th> <th>Data/Hora</th>
+                    <th>Contato</th>
+                    <th>Data/Hora</th>
                     <th>Ações</th>
                 </tr>
             </thead>
             <tbody id="lista-corpo">
-                </tbody>
+            </tbody>
         </table>
         
         <div style="margin-top: 20px; text-align: center; color: #888; font-size: 0.9rem;">
